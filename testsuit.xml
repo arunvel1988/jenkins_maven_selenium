@@ -1,0 +1,8 @@
+<suite name="Suite1" verbose="1">
+    <test name="Package1">
+        <classes>
+            <class name="Demo"/>
+        </classes>
+    </test>
+
+</suite>
