@@ -45,7 +45,7 @@
                 <version>3.2.5</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>Testsuit.xml</suiteXmlFile>
+                        <suiteXmlFile>testsuit.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
