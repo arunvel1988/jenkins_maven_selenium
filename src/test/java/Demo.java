@@ -27,8 +27,8 @@ public class Demo {
 
         // Navigate to a website
         driver.get("https://www.saucedemo.com");
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        driver.findElement(By.id("user-name")).sendKeys("standard_user1");
+        driver.findElement(By.id("password")).sendKeys("secret_sauce1");
         driver.findElement(By.id("login-button")).click();
     }
 
