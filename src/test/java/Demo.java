@@ -1,4 +1,3 @@
-// File: Demo.java
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,14 +18,14 @@ public class Demo {
         // Setup FirefoxDriver using WebDriverManager
         WebDriverManager.firefoxdriver().setup();
 
-        // Set Firefox to headless mode
+        // Enable headless mode
         FirefoxOptions options = new FirefoxOptions();
-        options.setHeadless(true); // or: options.addArguments("--headless");
+        options.addArguments("--headless"); // Use this instead of setHeadless(true)
 
-        // Create a new instance of the FirefoxDriver with options
+        // Create a new instance of the FirefoxDriver with headless mode
         driver = new FirefoxDriver(options);
 
-        // Navigate to the website and perform login
+        // Navigate to a website
         driver.get("https://www.saucedemo.com");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
@@ -35,18 +34,15 @@ public class Demo {
 
     @Test
     public void test1() {
-        // Verify that the Products page loaded
         WebElement text = driver.findElement(By.xpath("//span[text()='Products']"));
-        String expectedText = "Products";
-        String actualText = text.getText();
-        Assert.assertEquals(actualText, expectedText);
+        String originalText = "Products";
+        String expectedText = text.getText();
+        Assert.assertEquals(originalText, expectedText);
     }
 
     @AfterClass
     public void afterClass() {
-        // Close the browser and WebDriver
-        if (driver != null) {
-            driver.quit();
-        }
+        // Close the WebDriver instance
+        driver.quit();
     }
 }
